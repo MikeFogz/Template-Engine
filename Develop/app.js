@@ -104,3 +104,6 @@ const render = require("./lib/htmlRenderer");
     .then((res) => {
         console.log(res)
     })
+
+    // Geting undefined error. 
+    // Try creating functions with the prompts within them and call the functions 
