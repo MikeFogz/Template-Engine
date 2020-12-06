@@ -35,9 +35,72 @@ const render = require("./lib/htmlRenderer");
 // for the provided `render` function to work! ```
 
 
-    //Position
-    {type: "list", name: "appTitle", message: "Name of your Application",},
+    // //Position
+    // {type: "list", name: "appTitle", message: "Name of your Application",},
 
-    {type: "list", name: "appLicense", message: "What is your role?", choices: ['MIT', 'Apache', 'GPL', 'None']},
-    if (typeof role = intern 
+    // {type: "list", name: "appLicense", message: "What is your role?", choices: ['MIT', 'Apache', 'GPL', 'None']},
+    // if (typeof role = intern 
     
+
+    // Name
+    // ID, EMail, Role
+
+    //LIST: Manager, Engineer, Itern
+    //IF ELSE 
+
+    inquirer.prompt([
+    {
+        type: "input", 
+        name: "employeeName", 
+        message: "What is your Name?",
+    },
+    {
+        type: "input", 
+        name: "id", 
+        message: "What is your ID?",
+    },
+    {
+        type: "input", 
+        name: "email", 
+        message: "What is your Email?",
+    },
+    {
+        type: "list", 
+        name: "role", 
+        message: "What is your role?", 
+        choices: ['Manager', 'Engineer', 'Intern']
+    },
+    ])
+    .then((data) = async () => {
+        console.log(data.role)
+        if (data.role === "Manager") {
+            inquirer.prompt([
+                {
+                    type: "input",
+                    name: "officeNumber",
+                    message: "What is your office number?",
+                }
+            ])
+        } else if (data.role === "Engineer")
+        {
+            await inquirer.prompt([
+                {
+                    type: "input",
+                    name: "gitHub",
+                    message: "What is your GitHub Username?",
+                }
+            ])
+        } else (data.role === "Intern")
+        {
+            await inquirer.prompt([
+                {
+                    type: "input",
+                    name: "school",
+                    message: "What School are you attending?",
+                }
+            ])
+        }
+    })
+    .then((res) => {
+        console.log(res)
+    })
