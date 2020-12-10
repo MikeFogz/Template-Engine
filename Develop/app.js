@@ -35,7 +35,7 @@ const render = require("./lib/htmlRenderer");
 // for the provided `render` function to work! ```
 
 
-//misinterpreted prompt. User is generating the team, not a team memeber entering their info. 
+//misinterpreted prompt. User is generating the team, not a team member entering their info. 
 
 
 //First ask Add Team Member (what role)
@@ -54,8 +54,36 @@ function getRole = () => {
 ])
 .then((res) => {
     console.log(res);
-    
+
 })
+};
+function addManager () {
+    inquirer.prompt([
+        {
+            type: "input", 
+            name: "managerName", 
+            message: "What is the manager's name?",
+        },
+        {
+            type: "input", 
+            name: "managerId", 
+            message: "What is the manager's id?",
+        },
+        {
+            type: "input", 
+            name: "managerEmail", 
+            message: "What is the manager's email?",
+        },
+        {
+            type: "input",
+            name: "officeNumber",
+            message: "What is the manager's office number?",
+        },
+        ])
+        .then((res) => {
+            console.log(res);
+        
+        })
 }
 
     inquirer.prompt([
