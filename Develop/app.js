@@ -156,7 +156,9 @@ function addIntern () {
         ])
         .then((res) => {
             console.log(res);
-        
+            const newIntern = new Intern(res.internName, res.internId, res.internEmail, res.internSchool)
+            teamArr.push(newIntern);
+            addNew();
         })
 };
 
