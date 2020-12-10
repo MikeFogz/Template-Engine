@@ -10,6 +10,7 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
 
+const teamArr = [];
 
 //1) Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
@@ -48,13 +49,13 @@ function addRole() {
         name: 'addRole', 
         message: 'What team role are you adding?', 
         choices: [
-            "Manager", 'Engineer', 'Intern'
+            'Manager', 'Engineer', 'Intern'
         ]
     },
 ])
 .then((res) => {
     console.log(res);
-    if(res.addRole === "Manager"){
+    if(res.addRole === 'Manager'){
         addManager();
     } else if(res.addRole === 'Engineer'){
         addEngineer();
@@ -120,7 +121,9 @@ function addEngineer () {
         ])
         .then((res) => {
             console.log(res);
-        
+            const newEngineer = new Engineer(res.engineerName, res.engineerId, res.engineerEmail, res.gitHub)
+            teamArr.push(newEngineer);
+            addNew();
         })
 };
 
