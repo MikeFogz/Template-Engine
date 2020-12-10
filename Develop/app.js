@@ -54,7 +54,13 @@ function getRole = () => {
 ])
 .then((res) => {
     console.log(res);
-
+    if(res.getRole === 'Manager'){
+        addManager()
+    } else if(res.getRole === 'Engineer'){
+        addEngineer()
+    } else {
+        addIntern()
+    }
 })
 };
 
