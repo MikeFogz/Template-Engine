@@ -40,13 +40,13 @@ const render = require("./lib/htmlRenderer");
 
 //First ask Add Team Member (what role)
 
-function getRole = () => {
+function addRole = () => {
     inquirer.
     prompt([
     {
         type: 'list', 
-        name: 'getRole', 
-        message: 'What team role are you filling?', 
+        name: 'addRole', 
+        message: 'What team role are you adding?', 
         choices: [
             'Manager', 'Engineer', 'Intern'
         ]
@@ -55,11 +55,11 @@ function getRole = () => {
 .then((res) => {
     console.log(res);
     if(res.getRole === 'Manager'){
-        addManager()
+        addManager();
     } else if(res.getRole === 'Engineer'){
-        addEngineer()
+        addEngineer();
     } else {
-        addIntern()
+        addIntern();
     }
 })
 };
@@ -155,6 +155,30 @@ function addIntern () {
         })
 };
 
+// Function asking to add a new team member. 
+
+function addNew() {
+    inquirer.prompt([
+        {
+        type: "confirm",
+        name: "addNew",
+        message: "Would you like to add new team member?",
+        default: true
+        }
+    ])
+    .then(res) => {
+        if(res.addNew === true){
+            addRole();
+        } else{
+            renderTeam
+        }
+    }
+}
+
+//function to render the html page
+function renderTeam () {
+    
+}
 
     // .then((data) = async () => {
     //     console.log(data.role)
