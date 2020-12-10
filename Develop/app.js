@@ -40,7 +40,7 @@ const render = require("./lib/htmlRenderer");
 
 //First ask Add Team Member (what role)
 
-function addRole = () => {
+function addRole() {
     inquirer.
     prompt([
     {
@@ -48,15 +48,15 @@ function addRole = () => {
         name: 'addRole', 
         message: 'What team role are you adding?', 
         choices: [
-            'Manager', 'Engineer', 'Intern'
+            "Manager", 'Engineer', 'Intern'
         ]
     },
 ])
 .then((res) => {
     console.log(res);
-    if(res.getRole === 'Manager'){
+    if(res.addRole === "Manager"){
         addManager();
-    } else if(res.getRole === 'Engineer'){
+    } else if(res.addRole === 'Engineer'){
         addEngineer();
     } else {
         addIntern();
@@ -166,19 +166,24 @@ function addNew() {
         default: true
         }
     ])
-    .then(res) => {
+    .then((res) => {
         if(res.addNew === true){
             addRole();
         } else{
             renderTeam
         }
-    }
+    })
 }
 
 //function to render the html page
 function renderTeam () {
-    
+
 }
+
+
+
+//start prompt
+addRole()
 
     // .then((data) = async () => {
     //     console.log(data.role)
