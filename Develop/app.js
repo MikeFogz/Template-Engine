@@ -35,18 +35,28 @@ const render = require("./lib/htmlRenderer");
 // for the provided `render` function to work! ```
 
 
-    // //Position
-    // {type: "list", name: "appTitle", message: "Name of your Application",},
+//misinterpreted prompt. User is generating the team, not a team memeber entering their info. 
 
-    // {type: "list", name: "appLicense", message: "What is your role?", choices: ['MIT', 'Apache', 'GPL', 'None']},
-    // if (typeof role = intern 
+
+//First ask Add Team Member (what role)
+
+function getRole = () => {
+    inquirer.
+    prompt([
+    {
+        type: 'list', 
+        name: 'getRole', 
+        message: 'What team role are you filling?', 
+        choices: [
+            'Manager', 'Engineer', 'Intern'
+        ]
+    },
+])
+.then((res) => {
+    console.log(res);
     
-
-    // Name
-    // ID, EMail, Role
-
-    //LIST: Manager, Engineer, Itern
-    //IF ELSE 
+})
+}
 
     inquirer.prompt([
     {
