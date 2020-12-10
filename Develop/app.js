@@ -91,7 +91,9 @@ function addManager () {
         ])
         .then((res) => {
             console.log(res);
-        
+            const newManager = new Manager(res.managerName, res.managerId, res.managerEmail, res.officeNumber)
+            teamArr.push(newManager);
+            addNew();
         })
 };
 
