@@ -57,6 +57,8 @@ function getRole = () => {
 
 })
 };
+
+// function to add in Manager question prompts
 function addManager () {
     inquirer.prompt([
         {
@@ -84,64 +86,103 @@ function addManager () {
             console.log(res);
         
         })
-}
+};
 
+// function to add in Engineer question prompts
+function addEngineer () {
     inquirer.prompt([
-    {
-        type: "input", 
-        name: "employeeName", 
-        message: "What is your Name?",
-    },
-    {
-        type: "input", 
-        name: "id", 
-        message: "What is your ID?",
-    },
-    {
-        type: "input", 
-        name: "email", 
-        message: "What is your Email?",
-    },
-    {
-        type: "list", 
-        name: "role", 
-        message: "What is your role?", 
-        choices: ['Manager', 'Engineer', 'Intern']
-    },
-    ])
-    .then((data) = async () => {
-        console.log(data.role)
-        if (data.role === "Manager") {
-            inquirer.prompt([
-                {
-                    type: "input",
-                    name: "officeNumber",
-                    message: "What is your office number?",
-                }
-            ])
-        } else if (data.role === "Engineer")
         {
-            await inquirer.prompt([
-                {
-                    type: "input",
-                    name: "gitHub",
-                    message: "What is your GitHub Username?",
-                }
-            ])
-        } else (data.role === "Intern")
+            type: "input", 
+            name: "engineerName", 
+            message: "What is the engineer's name?",
+        },
         {
-            await inquirer.prompt([
-                {
-                    type: "input",
-                    name: "school",
-                    message: "What School are you attending?",
-                }
-            ])
-        }
-    })
-    .then((res) => {
-        console.log(res)
-    })
+            type: "input", 
+            name: "engineerId", 
+            message: "What is the engineer's id?",
+        },
+        {
+            type: "input", 
+            name: "engineerEmail", 
+            message: "What is the engineer's email?",
+        },
+        {
+            type: "input",
+            name: "gitHub",
+            message: "What is the engineer's GitHub username?",
+        },
+        ])
+        .then((res) => {
+            console.log(res);
+        
+        })
+};
+
+
+// function to add in Intern question prompts
+function addIntern () {
+    inquirer.prompt([
+        {
+            type: "input", 
+            name: "internName", 
+            message: "What is the intern's name?",
+        },
+        {
+            type: "input", 
+            name: "internId", 
+            message: "What is the intern's id?",
+        },
+        {
+            type: "input", 
+            name: "internEmail", 
+            message: "What is the intern's email?",
+        },
+        {
+            type: "input",
+            name: "internSchool",
+            message: "What is the intern's school?",
+        },
+        ])
+        .then((res) => {
+            console.log(res);
+        
+        })
+};
+
+
+    // .then((data) = async () => {
+    //     console.log(data.role)
+    //     if (data.role === "Manager") {
+    //         inquirer.prompt([
+    //             {
+    //                 type: "input",
+    //                 name: "officeNumber",
+    //                 message: "What is your office number?",
+    //             }
+    //         ])
+    //     } else if (data.role === "Engineer")
+    //     {
+    //         await inquirer.prompt([
+    //             {
+    //                 type: "input",
+    //                 name: "gitHub",
+    //                 message: "What is your GitHub Username?",
+    //             }
+    //         ])
+    //     } else (data.role === "Intern")
+    //     {
+    //         await inquirer.prompt([
+    //             {
+    //                 type: "input",
+    //                 name: "school",
+    //                 message: "What School are you attending?",
+    //             }
+    //         ])
+    //     }
+    // })
+    // .then((res) => {
+    //     console.log(res)
+    // })
 
     // Geting undefined error. 
     // Try creating functions with the prompts within them and call the functions 
