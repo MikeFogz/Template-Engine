@@ -27,7 +27,7 @@ Once installed run the applicaiton by opening the terminal and entering: node ap
 Follow the prompts to compile a team and generate a html page for them..
 
 Screen Shot of the code
-![Screenshot of App](MyTeam.png)
+![Screenshot of App](./Assets/MyTeam.png)
 [Link to Video walk thru](https://drive.google.com/file/d/1xYocujlF_DcpX-Zo3XsA2g5zw4A4_YlV/view)
 
 ## Contributing
