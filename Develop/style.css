@@ -1,0 +1,12 @@
+.jumbotron {
+  background-color: darkcyan;
+}
+#manager-header {
+  background-color: darkorange;
+}
+#engineer-header {
+  background-color: darkcyan;
+}
+#intern-header {
+  background-color: darkgray;
+}
