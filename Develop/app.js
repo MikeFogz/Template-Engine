@@ -177,7 +177,7 @@ function addNew() {
         if(res.addNew === true){
             addRole();
         } else{
-            renderTeam
+            renderTeam();
         }
     })
 }
