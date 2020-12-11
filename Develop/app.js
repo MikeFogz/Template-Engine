@@ -184,7 +184,10 @@ function addNew() {
 
 //function to render the html page
 function renderTeam () {
-
+    const HTML = render(teamArr);
+    fs.writeFile(outputPath, HTML, (err) => {
+        if (err) throw err
+    })
 }
 
 
